@@ -1,0 +1,13 @@
+n,m = list(map(int,input().split()))
+total = list(map(int,input().split()))
+A = set(map(int,input().split()))
+B = set(map(int,input().split()))
+
+Sum = 0
+for i in total:
+    if i in A:
+        Sum+=1
+    elif i in B:
+        Sum-=1
+
+print(Sum)
