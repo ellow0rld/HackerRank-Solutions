@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+//Complete the following function.
+
+int find_nth_term(int n, int a, int b, int c) {
+    int sm;
+    switch(n){
+        case 1: sm = a;break;
+        case 2: sm =  b;break;
+        case 3: sm =  c;break;
+    } 
+    for (int i=3;i<n;i++){
+        int t=a;a=b; b=c; c= t+a+b;
+        sm = c;
+    }
+    return sm;
+}
+
+int main() {
+    int n, a, b, c;
+    int ans;
+    scanf("%d %d %d %d", &n, &a, &b, &c);
+    ans = find_nth_term(n, a, b, c);
+    printf("%d", ans); 
+    return 0;
+}
